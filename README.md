@@ -2,33 +2,16 @@
 Implement slightly different (see below for detail) [SegNet](http://arxiv.org/abs/1511.00561) in tensorflow,
 successfully trained segnet-basic in CamVid dataset.
 
-Due to indice unravel still unavailable in tensorflow, the original upsampling
-method is temporarily replaced simply by deconv( or conv-transpose) layer (without pooling indices).
-You can follow the issue here: https://github.com/tensorflow/tensorflow/issues/2169
-(The current workaround for unpooling layer is a bit slow because it lacks of GPU support.)
 
 
-for model detail, please go to https://github.com/alexgkendall/caffe-segnet
+
+
 
 # Requirement
 tensorflow 1.0
 Pillow (optional, for write label image)
 scikit-image
 
-# Update
-
-Update to tf 1.0
-
-Finally get some time to refactor a bit, removing some un-used function and
-remove the hard-coded file path Now the model should be easy to config.
-The parameters can be found in main.py.
-
-I planned to add more feature such as dilation, multi-resolution, sequential learning..etc.
-Making it more like a "basic" segmentation toolbox and support more dataset as well.
-Therefore the model and documentation will be changed accordingly in the future.
-
-More utility function will be added and some messed coding style will be fixed.
-Any feature request is also welcomed.
 
 # Usage
 see also example.sh
